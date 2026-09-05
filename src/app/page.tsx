@@ -8,12 +8,12 @@ export default function ScoreboardPage() {
   const { teams, loading, error } = useScoreboard();
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-yellow-500/30 p-8 md:p-12 lg:p-24 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-yellow-500/30 p-8 md:p-12 lg:p-24 flex flex-col">
       <header className="mb-16 text-center">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent">
           QUIZ SHOWDOWN
         </h1>
-        <p className="mt-4 text-slate-400 font-mono tracking-widest uppercase">Live Leaderboard</p>
+        <p className="mt-4 text-slate-600 font-mono tracking-widest uppercase">Live Leaderboard</p>
       </header>
 
       {error && (

@@ -21,7 +21,7 @@ export function TeamCard({ team, rank }: TeamCardProps) {
     'from-amber-600 to-amber-800 border-amber-700 text-amber-50',      // 3rd - Bronze
   ];
 
-  const bgGradient = rank <= 3 ? rankColors[rank - 1] : 'from-slate-800 to-slate-900 border-slate-700 text-slate-200';
+  const bgGradient = rank <= 3 ? rankColors[rank - 1] : 'from-slate-100 to-slate-200 border-slate-300 text-slate-800';
   const isTopThree = rank <= 3;
 
   return (
@@ -36,9 +36,9 @@ export function TeamCard({ team, rank }: TeamCardProps) {
       )}
     >
       {/* Rank Indicator */}
-      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-black/20 flex items-center justify-center backdrop-blur-sm border border-white/10">
+      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-black/10 flex items-center justify-center backdrop-blur-sm border border-black/10">
         {rank === 1 ? (
-          <Trophy className="w-8 h-8 text-yellow-100 drop-shadow-md" />
+          <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-md" />
         ) : (
           <span className="text-3xl font-bold font-mono">#{rank}</span>
         )}
@@ -47,7 +47,7 @@ export function TeamCard({ team, rank }: TeamCardProps) {
       {/* Team Info */}
       <div className="flex-grow text-center md:text-left space-y-1">
         <h2 className="text-3xl font-black uppercase tracking-wider">{team.schoolName}</h2>
-        <p className={cn("text-sm font-semibold tracking-widest", isTopThree ? 'text-black/60' : 'text-slate-400')}>
+        <p className={cn("text-sm font-semibold tracking-widest", isTopThree ? 'text-black/60' : 'text-slate-600')}>
           TEAM CODE: {team.teamCode}
         </p>
 
@@ -59,8 +59,8 @@ export function TeamCard({ team, rank }: TeamCardProps) {
               className={cn(
                 "flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium border",
                 member.isCaptain
-                  ? (isTopThree ? 'bg-black/20 border-black/10' : 'bg-yellow-500/20 border-yellow-500/50 text-yellow-200')
-                  : (isTopThree ? 'bg-black/5 border-black/5' : 'bg-white/5 border-white/10 text-slate-300')
+                  ? (isTopThree ? 'bg-black/20 border-black/10' : 'bg-yellow-500/20 border-yellow-500/50 text-yellow-800')
+                  : (isTopThree ? 'bg-black/5 border-black/5' : 'bg-black/5 border-black/10 text-slate-700')
               )}
             >
               {member.isCaptain ? <Star className="w-4 h-4" /> : <User className="w-4 h-4" />}
@@ -71,7 +71,7 @@ export function TeamCard({ team, rank }: TeamCardProps) {
       </div>
 
       {/* Score */}
-      <div className="flex-shrink-0 text-center bg-black/20 rounded-2xl p-4 min-w-[140px] border border-white/10 backdrop-blur-sm">
+      <div className="flex-shrink-0 text-center bg-black/10 rounded-2xl p-4 min-w-[140px] border border-black/10 backdrop-blur-sm">
         <p className="text-xs font-bold tracking-widest uppercase mb-1 opacity-80">Total Score</p>
         <p className="text-5xl font-black font-mono tabular-nums">{team.totalScore}</p>
       </div>
