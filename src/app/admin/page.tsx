@@ -237,8 +237,8 @@ export default function AdminPage() {
         ) : (
           <div className="grid gap-4">
             {teams.map(team => (
-              <div key={team.id} className="bg-white border border-slate-200 rounded-xl p-4 md:p-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div>
+              <div key={team.id} className="bg-white border border-slate-200 rounded-xl p-4 md:p-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+                <div className="text-center md:text-left w-full md:w-auto">
                   <h3 className="text-xl font-bold">{team.schoolName}</h3>
                   <p className="text-slate-600 font-mono text-sm">Code: {team.teamCode} | Current Total: {team.totalScore}</p>
                   <p className="text-slate-500 text-xs mt-1">
@@ -246,7 +246,7 @@ export default function AdminPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap justify-center md:justify-end gap-2 w-full md:w-auto mt-2 md:mt-0">
                   <button
                     onClick={() => handleScoreUpdate(team.id, currentRoundInfo!.defaultPositive, team.roundScores, team.totalScore, team.schoolName)}
                     className="bg-green-500/20 text-green-600 hover:bg-green-500/30 border border-green-500/50 px-4 py-2 rounded-lg font-bold min-w-[80px]"

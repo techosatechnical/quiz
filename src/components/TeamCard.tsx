@@ -36,17 +36,17 @@ export function TeamCard({ team, rank }: TeamCardProps) {
       )}
     >
       {/* Rank Indicator */}
-      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-black/10 flex items-center justify-center backdrop-blur-sm border border-black/10">
+      <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-black/10 flex items-center justify-center backdrop-blur-sm border border-black/10">
         {rank === 1 ? (
-          <Trophy className="w-8 h-8 text-yellow-500 drop-shadow-md" />
+          <Trophy className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 drop-shadow-md" />
         ) : (
-          <span className="text-3xl font-bold font-mono">#{rank}</span>
+          <span className="text-2xl md:text-3xl font-bold font-mono">#{rank}</span>
         )}
       </div>
 
       {/* Team Info */}
       <div className="flex-grow text-center md:text-left space-y-1">
-        <h2 className="text-3xl font-black uppercase tracking-wider">{team.schoolName}</h2>
+        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider">{team.schoolName}</h2>
         <p className={cn("text-sm font-semibold tracking-widest", isTopThree ? 'text-black/60' : 'text-slate-600')}>
           TEAM CODE: {team.teamCode}
         </p>
@@ -71,9 +71,9 @@ export function TeamCard({ team, rank }: TeamCardProps) {
       </div>
 
       {/* Score */}
-      <div className="flex-shrink-0 text-center bg-black/10 rounded-2xl p-4 min-w-[140px] border border-black/10 backdrop-blur-sm">
+      <div className="flex-shrink-0 text-center bg-black/10 rounded-2xl p-4 w-full md:w-auto md:min-w-[140px] border border-black/10 backdrop-blur-sm">
         <p className="text-xs font-bold tracking-widest uppercase mb-1 opacity-80">Total Score</p>
-        <p className="text-5xl font-black font-mono tabular-nums">{team.totalScore}</p>
+        <p className="text-4xl md:text-5xl font-black font-mono tabular-nums">{team.totalScore}</p>
       </div>
     </motion.div>
   );
